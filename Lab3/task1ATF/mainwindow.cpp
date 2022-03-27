@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete listOfConv;
 }
 
 void MainWindow::calculateMonths()

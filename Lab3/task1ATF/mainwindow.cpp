@@ -313,7 +313,7 @@ bool MainWindow::test(QString& line, bool mode)
     {
         if ((i + 1) == line.size())
         {
-            QMessageBox::warning(this, "Warning","Incorrect data in the file.");
+            QMessageBox::warning(this, "Warning","Incorrect tel input.");
             return false;
         }
         if (count >= 6 && line.at(i) == ' ' )
@@ -402,15 +402,17 @@ void MainWindow::loadFromFile()
     ui->comboBox->addItem(QString::number(i + 1));
     for (int i = 0; i < listOfConv->getCount(); i++)
     ui->comboBox_2->addItem(QString::number(i + 1));
-
     ui->comboBox_5->clear();
-    ui->comboBox_5->addItem("date");
-    ui->comboBox_5->addItem("code");
-    ui->comboBox_5->addItem("city");
-    ui->comboBox_5->addItem("time");
-    ui->comboBox_5->addItem("tariff");
-    ui->comboBox_5->addItem("telThisCity");
-    ui->comboBox_5->addItem("telSub");
+    if (listOfConv->getCount() > 0)
+    {
+        ui->comboBox_5->addItem("date");
+        ui->comboBox_5->addItem("code");
+        ui->comboBox_5->addItem("city");
+        ui->comboBox_5->addItem("time");
+        ui->comboBox_5->addItem("tariff");
+        ui->comboBox_5->addItem("telThisCity");
+        ui->comboBox_5->addItem("telSub");
+    }
 }
 
 void MainWindow::deleteFromFile()
@@ -512,9 +514,23 @@ void MainWindow::on_pushButton_clicked()
     if(test.size() == 0)
     {
         QMessageBox::warning(this, "Warning","File is empty(or first line is clear).");
+        ui->comboBox->clear();
+        ui->comboBox_2->clear();
+        ui->lineEdit->clear();
+        ui->lineEdit_2->clear();
+        ui->lineEdit_3->clear();
+        ui->lineEdit_4->clear();
+        ui->lineEdit_codeAdd->clear();
+        ui->lineEdit_cityAdd->clear();
+        ui->lineEdit_timeAdd->clear();
+        ui->lineEdit_tariffAdd->clear();
+        ui->lineEdit_telThisCityAdd->clear();
+        ui->lineEdit_telSubAdd->clear();
+        ui->lineEdit->setInputMask("");
     }
     file.close();
     loadFromFile();
+    if (listOfConv->getCount() > 1)
     quicksort(listOfConv, 1, listOfConv->getCount());
     fileReset();
     textOutput();
@@ -762,7 +778,7 @@ void MainWindow::fileReset()
     QTextStream out(&file);
     if (!file.open(QIODevice::WriteOnly))
     {
-        qDebug() << "File wasn't opened!(saveToFile)";
+        qDebug() << "File wasn't opened!";
         return;
     }
     for (int i = 1; i <= listOfConv->getCount(); i++)

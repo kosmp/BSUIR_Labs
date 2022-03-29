@@ -805,6 +805,12 @@ void MainWindow::on_change_Button_clicked()
         QMessageBox::warning(this, "Warning","File isn't opened.");
         return;
     }
+    if (listOfConv->getCount() == 0)
+    {
+        QMessageBox::warning(this, "Warning","File is empty. Nothing to change.");
+        ui->lineEdit_4->clear();
+        return;
+    }
     QString line = ui->lineEdit->text();
     if (currTextParam == "date")
     {
@@ -893,7 +899,7 @@ void MainWindow::on_change_Button_clicked()
     {
         if (line.size() == 0)
         {
-            QMessageBox::warning(this, "Warning","Incorrect tariff. Must be at least 1 digit.");
+            QMessageBox::warning(this, "Warning","Incorrect tariff. Must be at least 1 letter.");
             ui->lineEdit->clear();
             return;
         }
@@ -952,7 +958,7 @@ void MainWindow::on_change_Button_clicked()
 
 void MainWindow::on_comboBox_5_currentTextChanged(const QString &currText)
 {
-    if (checkFile)
+    if (checkFile && listOfConv->getCount() != 0)
     {
         if (currText == "date")
         {
@@ -995,7 +1001,12 @@ void MainWindow::on_comboBox_5_currentTextChanged(const QString &currText)
 
 void MainWindow::on_comboBox_currentTextChanged(const QString &currText)
 {
-    if (checkFile)
+    if (currText.size() == 0)
+    {
+        ui->lineEdit->clear();
+        ui->lineEdit->setInputMask("");
+    }
+    if (checkFile && currText.size() != 0)
     {
         if (currTextParam == "date")
             ui->lineEdit->setText(listOfConv->getElem(currText.toInt())->date);

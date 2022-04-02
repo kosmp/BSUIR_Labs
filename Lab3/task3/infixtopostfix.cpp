@@ -37,9 +37,9 @@ QString InfixToPostfix::convert(QString infixLine)
                 opStack.push(infixLine[i]);
             else if (priority(opStack.top()) < priority(infixLine[i])) // если входящий оператор имеет более высокий приоритет, чем вершина opStack. (infixLine[i] == '*' || infixLine[i] == '/') && (opStack.top() == '+' || opStack.top() == '-')
                 opStack.push(infixLine[i]);
-            else if (priority(opStack.top()) >= priority(infixLine[i])  || opStack.top() == '(' || opStack.top() == ')') // если входящий оператор имеет более низкий или равный приоритет, чем вершина opStack. ((infixLine[i] == '+' || infixLine[i] == '-') && (opStack.top() == '*' || opStack.top() == '/' || infixLine[i] == '+' || infixLine[i] == '-')) || opStack.top() == '(' || opStack.top() == ')'
+            else if (priority(opStack.top()) >= priority(infixLine[i])) // если входящий оператор имеет более низкий или равный приоритет, чем вершина opStack. ((infixLine[i] == '+' || infixLine[i] == '-') && (opStack.top() == '*' || opStack.top() == '/' || infixLine[i] == '+' || infixLine[i] == '-')) || opStack.top() == '(' || opStack.top() == ')'
             {
-                while (!opStack.isEmpty() && priority(opStack.top()) >= priority(infixLine[i]) && opStack.top() != '(')
+                while (priority(opStack.top()) >= priority(infixLine[i]) && opStack.top() != '(')
                     postfixLine.append(opStack.pop());
                 opStack.push(infixLine[i]);
             }

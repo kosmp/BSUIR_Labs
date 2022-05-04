@@ -56,11 +56,15 @@ void Form::on_pushButton_clicked()
             QMessageBox::warning(this, "Message","You didn't enter number to push in additional line.");
             return;
         }
+        if (num > 100000000)
+        {
+            QMessageBox::warning(this, "Message","Too big value.");
+            return;
+        }
 
         ui->listWidget->clear();
         a.push_back(num);
 
-        int size = a.size();
         deque<int>::iterator iter(a.begin());
         for (; iter != a.end(); iter++)
         {
@@ -99,11 +103,15 @@ void Form::on_pushButton_clicked()
             QMessageBox::warning(this, "Message","You didn't enter number to push in additional line.");
             return;
         }
+        if (num > 100000000)
+        {
+            QMessageBox::warning(this, "Message","Too big value.");
+            return;
+        }
 
         ui->listWidget->clear();
         a.push_front(num);
 
-        int size = a.size();
         deque<int>::iterator iter(a.begin());
         for (; iter != a.end(); iter++)
         {
@@ -172,6 +180,11 @@ void Form::on_pushButton_clicked()
             QMessageBox::warning(this, "Message","You didn't enter number in additional line.");
             return;
         }
+        if (count > 1000)
+        {
+            QMessageBox::warning(this, "Message","Too big size. It's useless");
+            return;
+        }
 
         int value = -1;
         value = ui->lineEdit_2->text().toInt();
@@ -179,6 +192,11 @@ void Form::on_pushButton_clicked()
         if (ui->lineEdit_2->text().size() == 0)
         {
             QMessageBox::warning(this, "Message","You didn't enter value in additional line2 (digit).");
+            return;
+        }
+        if (value > 100000000)
+        {
+            QMessageBox::warning(this, "Message","Too big value.");
             return;
         }
 
@@ -197,7 +215,6 @@ void Form::on_pushButton_clicked()
 
         a.resize(count, value);
 
-        int size = a.size();
         deque<int>::iterator iter(a.begin());
         for (; iter != a.end(); iter++)
         {

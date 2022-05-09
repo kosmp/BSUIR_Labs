@@ -94,26 +94,23 @@ public:
 
     int findStackWithValue(int value)
     {
-        int indOfStack = -1;
-        for (int i = 0; i < size; i++)
+        int index = hashFunction(value);
+
+        stack<int> tmp = arr[index];
+        int sizeOfTmp = tmp.size();
+        for (int i = 0; i < sizeOfTmp; i++)
         {
-            stack<int> tmp = arr[i];
-            int sizeOfArrI = (int)arr[i].size();
-            for (int j = 0; j < sizeOfArrI; j++)
+            if (tmp.top() == value)
             {
-                if (tmp.top() == value)
-                {
-                    indOfStack = i;
-                    tmp.pop();
-                    return indOfStack;
-                }
-                else
-                {
-                    tmp.pop();
-                }
+                tmp.pop();
+                return index;
+            }
+            else
+            {
+                tmp.pop();
             }
         }
-        return indOfStack;
+        return -1;
     }
 
     bool empty()

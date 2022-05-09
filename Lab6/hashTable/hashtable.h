@@ -34,7 +34,8 @@ public:
     void insertItem(int data)
     {
         int index = hashFunction(data);
-        arr[index].push(data);
+        if (findStackWithValue(data) == -1)
+            arr[index].push(data);
     }
 
     void deleteItem(int data)

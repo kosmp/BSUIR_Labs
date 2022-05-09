@@ -1,24 +1,24 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
-#include "stack"
+#include "selfStack.h"
 #include <QString>
 
 class HashTable
 {
 private:
-    std::stack<int>* arr;
+    stack<int>* arr;
     int size;
 public:
     HashTable()
     {
         size = 10;
-        arr = new std::stack<int>[size];
+        arr = new stack<int>[size];
     }
 
     HashTable(int s)
     {
         size = s;
-        arr = new std::stack<int>[size];
+        arr = new stack<int>[size];
     }
 
     ~HashTable()
@@ -40,8 +40,8 @@ public:
     void deleteItem(int data)
     {
         int index = hashFunction(data);
-        std::stack<int> tmp = arr[index];
-        std::stack<int> tmpNew;
+        stack<int> tmp = arr[index];
+        stack<int> tmpNew;
         int sizeTmp = (int)tmp.size();
         bool find = false;
         for (int i = 0; i < sizeTmp; i++)
@@ -72,7 +72,7 @@ public:
         int indOfStack = -1;
         for (int i = 0; i < size; i++)
         {
-            std::stack<int> tmp = arr[i];
+            stack<int> tmp = arr[i];
             int sizeOfArrI = (int)arr[i].size();
             for (int j = 0; j < sizeOfArrI; j++)
             {
@@ -96,7 +96,7 @@ public:
         int indOfStack = -1;
         for (int i = 0; i < size; i++)
         {
-            std::stack<int> tmp = arr[i];
+            stack<int> tmp = arr[i];
             int sizeOfArrI = (int)arr[i].size();
             for (int j = 0; j < sizeOfArrI; j++)
             {
@@ -128,8 +128,8 @@ public:
         QString table;
         for (int i = 0; i < size; i++)
         {
-            std::stack<int> reverseOrder;
-            std::stack<int> tmp = arr[i];
+            stack<int> reverseOrder;
+            stack<int> tmp = arr[i];
             int sizeTmp = (int)tmp.size();
             for (int j = 0; j < sizeTmp; j++)
             {

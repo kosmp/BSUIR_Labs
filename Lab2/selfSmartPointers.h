@@ -1,4 +1,5 @@
-﻿#include <iostream>
+#pragma once
+#include <iostream>
 
 template <typename T>
 class weak_ptr;
@@ -679,8 +680,3 @@ public:
 
 	friend class shared_ptr<T[]>;
 };
-
-int main()
-{
-
-}

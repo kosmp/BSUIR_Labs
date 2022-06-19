@@ -63,15 +63,11 @@ public:
 
             int row = mid + finish.getRow();
             int col = finish.getCol();
-            //finish = &arr[row][col];
             finish.setCoord(row, col);
-            //finish.setCurrArr(arr);
 
             start.setCoord(mid, 0);
             start.setCurrArr(arr);
             start--;
-            //start = &arr[mid - 1][9];
-            //start.setCoord(mid - 1, 9);
 
             new(&arr[start.getRow()][start.getCol()]) T(value);
             _size++;
@@ -196,7 +192,6 @@ public:
             }
 
             new(&arr[row][col]) T(value);
-            //++finish;
             finish = &arr[row][col];
             finish.setCoord(row, col);
             finish.setCurrArr(arr);

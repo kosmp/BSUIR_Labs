@@ -1,0 +1,8 @@
+D:\BSUIR\Labs programming\Lab 3\task2\bin\Debug\task2.exe.config
+D:\BSUIR\Labs programming\Lab 3\task2\bin\Debug\task2.exe
+D:\BSUIR\Labs programming\Lab 3\task2\bin\Debug\task2.pdb
+D:\BSUIR\Labs programming\Lab 3\task2\obj\Debug\task2.csproj.SuggestedBindingRedirects.cache
+D:\BSUIR\Labs programming\Lab 3\task2\obj\Debug\task2.csproj.CoreCompileInputs.cache
+D:\BSUIR\Labs programming\Lab 3\task2\obj\Debug\task2.exe
+D:\BSUIR\Labs programming\Lab 3\task2\obj\Debug\task2.pdb
+D:\BSUIR\Labs programming\Lab 3\task2\obj\Debug\task2.csproj.AssemblyReference.cache

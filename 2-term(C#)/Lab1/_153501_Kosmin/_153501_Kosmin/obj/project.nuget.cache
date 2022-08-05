@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "K63OMFYBiHYt3vm46KQdUZWBBbWtku42ZnT8uWUufIEFng8Y4azf5DHYFoJuT4A+e9NDsK/zi0gYOX9Y3dAFKA==",
+  "success": true,
+  "projectFilePath": "D:\\BSUIR\\Программирование\\Lab 1\\_153501_Kosmin\\_153501_Kosmin\\_153501_Kosmin.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pavel\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Pavel\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

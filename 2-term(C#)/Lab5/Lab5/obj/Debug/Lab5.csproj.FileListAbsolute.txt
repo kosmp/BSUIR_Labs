@@ -1,0 +1,8 @@
+D:\BSUIR\Labs programming\Lab5\Lab5\bin\Debug\Lab5.exe.config
+D:\BSUIR\Labs programming\Lab5\Lab5\bin\Debug\Lab5.exe
+D:\BSUIR\Labs programming\Lab5\Lab5\bin\Debug\Lab5.pdb
+D:\BSUIR\Labs programming\Lab5\Lab5\obj\Debug\Lab5.csproj.AssemblyReference.cache
+D:\BSUIR\Labs programming\Lab5\Lab5\obj\Debug\Lab5.csproj.SuggestedBindingRedirects.cache
+D:\BSUIR\Labs programming\Lab5\Lab5\obj\Debug\Lab5.csproj.CoreCompileInputs.cache
+D:\BSUIR\Labs programming\Lab5\Lab5\obj\Debug\Lab5.exe
+D:\BSUIR\Labs programming\Lab5\Lab5\obj\Debug\Lab5.pdb

@@ -1,0 +1,8 @@
+D:\BSUIR\Labs programming\Lab7\Lab7\obj\Debug\Lab7.csproj.AssemblyReference.cache
+D:\BSUIR\Labs programming\Lab7\Lab7\obj\Debug\Lab7.csproj.SuggestedBindingRedirects.cache
+D:\BSUIR\Labs programming\Lab7\Lab7\obj\Debug\Lab7.csproj.CoreCompileInputs.cache
+D:\BSUIR\Labs programming\Lab7\Lab7\bin\Debug\Lab7.exe.config
+D:\BSUIR\Labs programming\Lab7\Lab7\bin\Debug\Lab7.exe
+D:\BSUIR\Labs programming\Lab7\Lab7\bin\Debug\Lab7.pdb
+D:\BSUIR\Labs programming\Lab7\Lab7\obj\Debug\Lab7.exe
+D:\BSUIR\Labs programming\Lab7\Lab7\obj\Debug\Lab7.pdb

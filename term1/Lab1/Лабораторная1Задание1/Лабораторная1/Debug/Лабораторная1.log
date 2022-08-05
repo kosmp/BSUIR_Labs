@@ -1,0 +1,4 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (Лабораторная1.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  main.cpp
+C:\Users\kosmin\source\repos\Лабораторная1\Лабораторная1\main.cpp(20,21): error C2065: _: необъявленный идентификатор
+C:\Users\kosmin\source\repos\Лабораторная1\Лабораторная1\main.cpp(22,5): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "cout"

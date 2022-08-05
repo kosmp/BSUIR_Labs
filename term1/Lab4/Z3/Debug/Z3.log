@@ -1,0 +1,4 @@
+﻿  Z3.cpp
+C:\Users\kosmin\source\repos\Lab4\Z3\Z3.cpp(15,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\kosmin\source\repos\Lab4\Z3\Z3.cpp(20,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Z3.vcxproj -> C:\Users\kosmin\source\repos\Lab4\Debug\Z3.exe

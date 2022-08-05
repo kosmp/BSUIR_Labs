@@ -1,0 +1,11 @@
+﻿  Z3.2.cpp
+C:\Users\kosmin\source\repos\Lab5\Z3.2\Z3.2.cpp(8,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\Z3.2\Z3.2.cpp(38,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\Z3.2\Z3.2.cpp(58,35): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\Z3.2\Z3.2.cpp(69,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\Z3.2\Z3.2.cpp(83,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\Z3.2\Z3.2.cpp(103,39): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\Z3.2\Z3.2.cpp(114,35): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\Z3.2\Z3.2.cpp(173,9): warning C4101: save: неиспользованная локальная переменная
+C:\Users\kosmin\source\repos\Lab5\Z3.2\Z3.2.cpp(137): warning C4715: checkAndEnterSizeArray: значение возвращается не при всех путях выполнения
+  Z3.2.vcxproj -> C:\Users\kosmin\source\repos\Lab5\Debug\Z3.2.exe

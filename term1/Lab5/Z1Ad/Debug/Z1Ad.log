@@ -1,0 +1,4 @@
+﻿  Z1Ad.cpp
+C:\Users\kosmin\source\repos\Lab5\Z1Ad\Z1Ad.cpp(10,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\Z1Ad\Z1Ad.cpp(24,27): warning C4018: <: несоответствие типов со знаком и без знака
+  Z1Ad.vcxproj -> C:\Users\kosmin\source\repos\Lab5\Debug\Z1Ad.exe

@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\kosmin\source\repos\Lab5\DynamicLib\Source.cpp(10,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\DynamicLib\Source.cpp(37,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\DynamicLib\Source.cpp(51,27): warning C4018: <: несоответствие типов со знаком и без знака
+  DynamicLib.vcxproj -> C:\Users\kosmin\source\repos\Lab5\Debug\DynamicLib.dll

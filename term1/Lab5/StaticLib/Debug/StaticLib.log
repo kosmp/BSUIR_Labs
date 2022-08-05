@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\kosmin\source\repos\Lab5\StaticLib\Source.cpp(6,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\StaticLib\Source.cpp(33,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab5\StaticLib\Source.cpp(47,27): warning C4018: <: несоответствие типов со знаком и без знака
+  StaticLib.vcxproj -> C:\Users\kosmin\source\repos\Lab5\Debug\StaticLib.lib

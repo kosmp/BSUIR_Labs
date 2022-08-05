@@ -1,0 +1,10 @@
+
+Form number: 0. It's a number of city in the array(counting from 0).
+Date: 01.12.2021
+Code: 104
+CityName: Brest
+Tariff: 50
+Tel: 3208472
+TelSub: 4520151
+Time of conversation in this city: 170
+The sum(cost for conversation): 8500

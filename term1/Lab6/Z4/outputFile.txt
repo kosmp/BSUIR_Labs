@@ -1,0 +1,9 @@
+First, the program removes the four letters C, Q, W and X. Instead of c, before the letters e, i, y, you will need to write the letter s, and in other cases, the letter k.
+Instead of the letter q, you will need to write the letter k, instead of the combination qu - kv, instead of x - ks, and instead of w - v.
+Secondly, the combination of letters ph will be written as f, youand oo - as u, ee - as i, th - as z.
+In addition, all double consonants (including those formed after substitutions) will become single.
+If the first letter of the letter combination to be replaced was uppercase, then the first letter of the replacement must also be uppercase.
+The first letter in the replacements x --> ks, qu --> kv must always be lowercase.
+
+Tu svift for Ziks, tu kvik for Galov,
+Tu strong for ung Prinse Josef to folov.

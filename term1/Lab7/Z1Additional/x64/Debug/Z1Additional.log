@@ -1,0 +1,4 @@
+﻿  Z1Additional.cpp
+C:\Users\kosmin\source\repos\Lab7\Z1Additional\Z1Additional.cpp(95,31): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\kosmin\source\repos\Lab7\Z1Additional\Z1Additional.cpp(100,31): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+  Z1Additional.vcxproj -> C:\Users\kosmin\source\repos\Lab7\x64\Debug\Z1Additional.exe

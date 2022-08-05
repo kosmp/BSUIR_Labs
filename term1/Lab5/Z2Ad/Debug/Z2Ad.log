@@ -1,0 +1,3 @@
+﻿  Z2Ad.cpp
+C:\Users\kosmin\source\repos\Lab5\Z2Ad\Z2Ad.cpp(112,5): error C4235: использовано нестандартное расширение: ключевое слово "__int128" данной архитектурой не поддерживается
+C:\Users\kosmin\source\repos\Lab5\Z2Ad\Z2Ad.cpp(112,14): error C2065: a: необъявленный идентификатор

@@ -1,0 +1,9 @@
+﻿  Z3.cpp
+C:\Users\kosmin\source\repos\Lab7\Z3\Z3.cpp(112,36): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\kosmin\source\repos\Lab7\Z3\Z3.cpp(137,5): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\kosmin\source\repos\Lab7\Z3\Z3.cpp(265,5): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\kosmin\source\repos\Lab7\Z3\Z3.cpp(418,33): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\kosmin\source\repos\Lab7\Z3\Z3.cpp(420,50): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\kosmin\source\repos\Lab7\Z3\Z3.cpp(439,34): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\kosmin\source\repos\Lab7\Z3\Z3.cpp(441,50): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Z3.vcxproj -> C:\Users\kosmin\source\repos\Lab7\x64\Debug\Z3.exe

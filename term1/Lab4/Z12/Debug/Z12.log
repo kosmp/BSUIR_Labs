@@ -1,0 +1,5 @@
+﻿  Z12.cpp
+C:\Users\kosmin\source\repos\Lab4\Z12\Z12.cpp(37,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab4\Z12\Z12.cpp(66,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kosmin\source\repos\Lab4\Z12\Z12.cpp(79,27): warning C4018: <: несоответствие типов со знаком и без знака
+  Z12.vcxproj -> C:\Users\kosmin\source\repos\Lab4\Debug\Z12.exe

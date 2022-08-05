@@ -1,0 +1,6 @@
+﻿  Z1.cpp
+C:\Users\kosmin\source\repos\Lab7\Z1\Z1.cpp(73,26): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\kosmin\source\repos\Lab7\Z1\Z1.cpp(104,5): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\kosmin\source\repos\Lab7\Z1\Z1.cpp(54,12): warning C4101: q: неиспользованная локальная переменная
+C:\Users\kosmin\source\repos\Lab7\Z1\Z1.cpp(54,9): warning C4101: n: неиспользованная локальная переменная
+  Z1.vcxproj -> C:\Users\kosmin\source\repos\Lab7\x64\Debug\Z1.exe

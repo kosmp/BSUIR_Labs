@@ -1,0 +1,4 @@
+﻿  Z5.cpp
+C:\Users\kosmin\source\repos\Lab6\Z5\Z5.cpp(118,58): warning C4267: инициализация: преобразование из "size_t" в "long"; возможна потеря данных
+C:\Users\kosmin\source\repos\Lab6\Z5\Z5.cpp(130,67): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Z5.vcxproj -> C:\Users\kosmin\source\repos\Lab6\x64\Debug\Z5.exe

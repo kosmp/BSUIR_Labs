@@ -1,7 +1,0 @@
-D:\BSUIR\Labs programming\Lab 2\task1\bin\Debug\task1.exe.config
-D:\BSUIR\Labs programming\Lab 2\task1\bin\Debug\task1.exe
-D:\BSUIR\Labs programming\Lab 2\task1\bin\Debug\task1.pdb
-D:\BSUIR\Labs programming\Lab 2\task1\obj\Debug\task1.csproj.SuggestedBindingRedirects.cache
-D:\BSUIR\Labs programming\Lab 2\task1\obj\Debug\task1.csproj.CoreCompileInputs.cache
-D:\BSUIR\Labs programming\Lab 2\task1\obj\Debug\task1.exe
-D:\BSUIR\Labs programming\Lab 2\task1\obj\Debug\task1.pdb

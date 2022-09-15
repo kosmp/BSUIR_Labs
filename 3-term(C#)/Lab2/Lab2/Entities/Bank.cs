@@ -124,7 +124,7 @@ namespace Lab2.Entities
 
     public class Bank
     {
-        public delegate void ContributorHandler(string action, Contributor contributor);
+        public delegate void ContributorHandler(string action);
         public event ContributorHandler? NotifyContributorChanged;
         public delegate void NewContributionHandler(string action, IContribution newContribution, Contributor contributor);
         public event NewContributionHandler? NotifyNewContributionAdded;
@@ -138,7 +138,7 @@ namespace Lab2.Entities
                     return;
             Contributor newContributor = new Contributor(surname);
             contributors.Add(newContributor);
-            NotifyContributorChanged?.Invoke("contributor was added", newContributor);
+            NotifyContributorChanged?.Invoke("Contributor was added. Surname: " + surname);
         }
 
         public void doContribution(string surname, IContribution typeContribution)
@@ -185,7 +185,7 @@ namespace Lab2.Entities
         {
             Contributor contributor = getContributorBySurname(surname);
             contributors.Remove(contributor);
-            NotifyContributorChanged?.Invoke("contributor was removed", contributor);
+            NotifyContributorChanged?.Invoke("Contributor was removed. Surname: " + surname);
         }
 
         public int getContributionAmount(string surname, string contributionID)

@@ -4,19 +4,19 @@ namespace Lab2.Entities
 {
     public class Journal
     {
-        protected Bank currentBank;
-        protected MyCustomCollection<Tuple<string, Contributor>> eventList = new MyCustomCollection<Tuple<string, Contributor>>();
+        public string JournalTitle { get; set; }
+
+        protected MyCustomCollection<string> eventList = new MyCustomCollection<string>();
         public int countOfEvents = 0;
 
-        public Journal(ref Bank bank)
+        public Journal(string journalTitle)
         {
-            currentBank = bank;
-            currentBank.NotifyContributorChanged += RegNewAction;
+            JournalTitle = journalTitle;
         }
 
-        public void RegNewAction(string action, Contributor contributor)
+        public void RegNewActions(string infoAboutAction)
         {
-            eventList.Add(new Tuple<string, Contributor>(action, contributor));
+            eventList.Add(infoAboutAction);
             countOfEvents++;
         }
 
@@ -29,17 +29,16 @@ namespace Lab2.Entities
 
         public void printEventList()
         {
-            if (eventList.Count > 0)
-                Console.WriteLine("\n-----------------------\nEvent list from journal(Contributors which were added or removed): ");
+            Console.WriteLine($"\nEvent list from {JournalTitle} journal:");
             int counter = 1;
             foreach (var x in eventList)
             {
-                Console.WriteLine(counter + ". Event: " + x.Item1 + ". Surname: " + x.Item2.Surname);
+                Console.WriteLine(counter + ". Event: " + x);
                 counter++;
             }
 
             if (eventList.Count > 0)
-                Console.WriteLine("-----------------------\n");
+                Console.WriteLine("\n");
         }
     }
 }

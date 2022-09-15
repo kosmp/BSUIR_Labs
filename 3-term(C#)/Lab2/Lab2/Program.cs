@@ -8,7 +8,8 @@ public class Program
     {
         Bank belarusbank = new Bank();
 
-        Journal journal = new Journal(ref belarusbank);
+        Journal journal = new Journal("BelarusBank");
+        belarusbank.NotifyContributorChanged += journal.RegNewActions;
         belarusbank.NotifyNewContributionAdded += (string action, IContribution contribution, Contributor contributor) => Console.WriteLine("\nEvent: " + action +
             ". Surname: " + contributor.Surname + ", ID: " + contribution.getContributionID() + ", Deposit: " + contribution.getAmount());
 

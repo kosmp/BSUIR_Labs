@@ -17,20 +17,18 @@ namespace Lab3.Entities
 
         public List<string> getSortedListOfContributions()
         {
-            var finalSec = contributions.OrderBy(p => p.Value.getPercent());
-            List<string> sortedByPercentListIDs = new List<string>();
-            foreach (var x in finalSec)
-                sortedByPercentListIDs.Add(x.Key);
-            return sortedByPercentListIDs;
+            var finalSec = contributions
+                .OrderBy(p => p.Value.getPercent())
+                .Select(c=>c.Key)
+                .ToList();
+            return finalSec;
         }
 
         public double getPaymentOnAllContributionsInBank()
         {
-            var finalSec = from i in contributions select i.Value;
-            double res = 0;
-            foreach (var x in finalSec)
-                res += x.getPercent() / 100.0 * x.getAmount();
-            return res;
+            return (from i in contributions
+                    select i.Value.getPercent() / 100.0 * i.Value.getAmount())
+                            .Sum();
         }
 
         public int getSumOfAllContributions()
@@ -44,8 +42,8 @@ namespace Lab3.Entities
 
         public string getSurnameWhoPaidMaxAmountPercent()
         {
-            var res = contributors.OrderByDescending(p => p.getTotalPaymentOnContributions()).ToList();
-            return res[0].Surname;
+            var res = contributors.OrderByDescending(p => p.getTotalPaymentOnContributions()).First().Surname;
+            return res;
         }
 
         public int getNumberOfContributorsWhoGotPaymentMoreThan(double moreThanThisPayment)
@@ -55,24 +53,11 @@ namespace Lab3.Entities
 
         public void printGroupOfPayments()
         {
-            var res = contributors.GroupBy(p => p.Name)
-                .Select(x => new
-                {
-                    Name = x.Key,
-                    Surnames = from p in x select p.Surname,
-                    Payments = from p in x select p.getTotalPaymentOnContributions()
-                });
+            IEnumerable<(string Name, double Total)> res = contributors.GroupBy(p => p.Name)
+                .Select(x => (x.Key, x.Sum(p => p.getTotalPaymentOnContributions())));   // Total sum for each Name among contributors
             Console.WriteLine("\n");
             foreach (var contributor in res)
-            {
-                Console.WriteLine("Name: " + contributor.Name);
-                foreach (var j in contributor.Surnames)
-                    Console.Write("Surname: " + j + ". ");
-                Console.WriteLine();
-                foreach (var y in contributor.Payments)
-                    Console.WriteLine("Payment: " + y);
-                Console.WriteLine("\n");
-            }
+                Console.WriteLine($"Name: {contributor.Name}s got {contributor.Total}\n");
         }
 
         public void addNewContributor(string name, string surname)

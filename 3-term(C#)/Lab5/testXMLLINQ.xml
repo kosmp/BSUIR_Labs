@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Airports>
+  <airport Name="Fvf">
+    <City>Minsk</City>
+    <RunwayLength>1200</RunwayLength>
+    <RunwayWidth>300</RunwayWidth>
+    <NumberOfRunways>5</NumberOfRunways>
+  </airport>
+  <airport Name="Vbf">
+    <City>Brest</City>
+    <RunwayLength>1000</RunwayLength>
+    <RunwayWidth>280</RunwayWidth>
+    <NumberOfRunways>3</NumberOfRunways>
+  </airport>
+  <airport Name="Bfd">
+    <City>Moscow</City>
+    <RunwayLength>1300</RunwayLength>
+    <RunwayWidth>320</RunwayWidth>
+    <NumberOfRunways>5</NumberOfRunways>
+  </airport>
+  <airport Name="Mbf">
+    <City>Gomel</City>
+    <RunwayLength>1400</RunwayLength>
+    <RunwayWidth>300</RunwayWidth>
+    <NumberOfRunways>4</NumberOfRunways>
+  </airport>
+  <airport Name="Dgf">
+    <City>Vitebsk</City>
+    <RunwayLength>1250</RunwayLength>
+    <RunwayWidth>310</RunwayWidth>
+    <NumberOfRunways>5</NumberOfRunways>
+  </airport>
+</Airports>

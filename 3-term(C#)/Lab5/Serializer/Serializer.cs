@@ -15,7 +15,7 @@ namespace _Serializer
                 .Select(p => new Airport
                 {
                     Name = p.Attribute("Name")?.Value,
-                    City = p.Attribute("City")?.Value,
+                    City = p.Element("City")?.Value,
                     RunwayLength = (double)(p.Element("RunwayLength")),
                     RunwayWidth = (double)(p.Element("RunwayWidth")),
                     NumberOfRunways = (int)(p.Element("NumberOfRunways"))
@@ -46,12 +46,10 @@ namespace _Serializer
 
         public IEnumerable<Airport> DeSerializeXML(string fileName)
         {
-            XmlSerializer reader = new XmlSerializer(typeof(Airport));
-
+            XmlSerializer reader = new XmlSerializer(typeof(Airport[]));
             using (FileStream fs = new FileStream(fileName, FileMode.Open))
             {
-                IEnumerable<Airport>? airports = reader.Deserialize(fs) as IEnumerable<Airport>;
-
+                Airport[]? airports = reader.Deserialize(fs) as Airport[];
                 if (airports != null)
                 {
                     foreach (var airport in airports)
@@ -90,12 +88,18 @@ namespace _Serializer
 
         public void SerializeXML(IEnumerable<Airport> xxx, string fileName)
         {
-            XmlSerializer writer = new XmlSerializer(typeof(Airport));    
+            Airport[] airports = new Airport[xxx.Count()];
+            int i = 0;
+            foreach (Airport airport in xxx)
+            {
+                airports[i] = airport;
+                i++;
+            }
 
+            XmlSerializer writer = new XmlSerializer(typeof(Airport[]));
             using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
             {
-                foreach (var item in xxx)
-                    writer.Serialize(fs, item);
+                writer.Serialize(fs, airports);
             }
         }
     }

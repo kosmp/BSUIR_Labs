@@ -15,17 +15,17 @@ public class Program
 
         Serializer serializer = new Serializer();
 
-        //serializer.SerializeXML(airports, "D:\\BSUIR\\BSUIR_Labs\\3-term(C#)\\Lab5\\testXML.xml");
-        //IEnumerable<Airport> listOfDeSerializedXML = serializer.DeSerializeXML("D:\\BSUIR\\BSUIR_Labs\\3-term(C#)\\Lab5\\testXML.xml");
-        //Console.WriteLine("\nListOfDeSerializedXML: ");
-        //foreach (Airport airport in listOfDeSerializedXML)
-        //{
-        //    Console.WriteLine("Name: " + airport.Name);
-        //    Console.WriteLine("City: " + airport.City);
-        //    Console.WriteLine("RunwayLength: " + airport.RunwayLength);
-        //    Console.WriteLine("RunwayWidth: " + airport.RunwayWidth);
-        //    Console.WriteLine("NumberOfRunways: " + airport.NumberOfRunways);
-        //}
+        serializer.SerializeXML(airports, "D:\\BSUIR\\BSUIR_Labs\\3-term(C#)\\Lab5\\testXML.xml");
+        IEnumerable<Airport> listOfDeSerializedXML = serializer.DeSerializeXML("D:\\BSUIR\\BSUIR_Labs\\3-term(C#)\\Lab5\\testXML.xml");
+        Console.WriteLine("\nListOfDeSerializedXML: ");
+        foreach (Airport airport in listOfDeSerializedXML)
+        {
+            Console.WriteLine("Name: " + airport.Name);
+            Console.WriteLine("City: " + airport.City);
+            Console.WriteLine("RunwayLength: " + airport.RunwayLength);
+            Console.WriteLine("RunwayWidth: " + airport.RunwayWidth);
+            Console.WriteLine("NumberOfRunways: " + airport.NumberOfRunways);
+        }
 
         serializer.SerializeByLINQ(airports, "D:\\BSUIR\\BSUIR_Labs\\3-term(C#)\\Lab5\\testXMLLINQ.xml");
         IEnumerable<Airport> listOfDeSerializedXMLLINQ = serializer.DeSerializeByLINQ("D:\\BSUIR\\BSUIR_Labs\\3-term(C#)\\Lab5\\testXMLLINQ.xml");

@@ -2,7 +2,7 @@
 
 namespace Lab4
 {
-    public class FileService<T> where T : Car
+    public class FileService<T> : IFileService<T> where T : Car
     {
         public IEnumerable<T> ReadFile(string fileName)
         {

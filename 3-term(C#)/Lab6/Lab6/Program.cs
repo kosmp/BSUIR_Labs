@@ -1,6 +1,5 @@
 ﻿using Lab6;
 using System.Reflection;
-using static System.Net.Mime.MediaTypeNames;
 
 public class Program
 {

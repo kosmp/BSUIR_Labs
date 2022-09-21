@@ -80,7 +80,7 @@ namespace _Serializer
 
         public void SerializeJSON(IEnumerable<Airport> xxx, string fileName)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(fileName, FileMode.Create))
             {
                 JsonSerializer.Serialize(fs, xxx);
             }
@@ -97,7 +97,7 @@ namespace _Serializer
             }
 
             XmlSerializer writer = new XmlSerializer(typeof(Airport[]));
-            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(fileName, FileMode.Create))
             {
                 writer.Serialize(fs, airports);
             }

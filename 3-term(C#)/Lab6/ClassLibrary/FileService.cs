@@ -19,9 +19,10 @@ namespace ClassLibrary
         
         public void SaveData(IEnumerable<T> data, string fileName)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(fileName, FileMode.Create))
             {
-                JsonSerializer.Serialize(fs, data);
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                JsonSerializer.Serialize(fs, data, options);
             }
         }
     }

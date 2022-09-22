@@ -22,10 +22,7 @@ namespace Lab4
 
         public void SaveData(IEnumerable<T> data, string fileName)
         {
-            if (File.Exists(fileName))
-                File.Delete(fileName);
-
-            using (BinaryWriter writer = new BinaryWriter(File.Open(fileName, FileMode.OpenOrCreate)))
+            using (BinaryWriter writer = new BinaryWriter(File.Open(fileName, FileMode.Create)))
             {
                 foreach (T item in data)
                 {

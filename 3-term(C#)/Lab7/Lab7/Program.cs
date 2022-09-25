@@ -1,4 +1,4 @@
-﻿using Lab7;
+﻿using ClassLibrary;
 
 public class Program
 {
@@ -11,6 +11,13 @@ public class Program
         test1.NotifyEnd += (result, time) =>
         {
             listOfResults.Add("Thread ID: " + Thread.CurrentThread.ManagedThreadId + " Result of calc: " + result + " Time: " + time + " CurrentThreadName: " + Thread.CurrentThread.Name);
+            
+            if (listOfResults.Count == 5)
+            {
+                Console.Write("\n");
+                foreach (var item in listOfResults)
+                    Console.WriteLine(item.ToString());
+            }
         };
 
         (int id, int progress)[] progressArr = new (int id, int progress)[5] { (0, 0), (0, 0), (0, 0), (0, 0), (0, 0) };
@@ -64,20 +71,6 @@ public class Program
                         Console.SetCursorPosition(Console.CursorLeft - sCurrProgress.Length - 2, Console.CursorTop);
                     }
                 }
-            }
-
-            int finalCounter = 0;
-            for (int i = 0; i < 5; i++)
-            {
-                if (progressArr[i].progress == 100)
-                    finalCounter++;
-            }
-
-            if (finalCounter == 5)
-            {
-                Console.Write("\n");
-                foreach (var item in listOfResults)
-                    Console.WriteLine(item.ToString());
             }
         };
 

@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Lab7
+namespace ClassLibrary
 {
     public class TestClass
     {

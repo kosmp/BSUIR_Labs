@@ -19,12 +19,12 @@ public class Program
 
         var task1 = service.WriteToStreamAsync(mStream, cars);
 
-        await Task.Delay(200);
+        await Task.Delay(200);  // for sync work according to condition
 
         var task2 = service.CopyFromStreamAsync(mStream, "test.json");
 
-        await task1;
-        await task2;
+        task1.Wait();
+        task2.Wait();
 
         Task<int> getStatiscticsTask = service.GetStatisticsAsync("test.json", x => x.NeedInspectionInThisYear == true);
         int numOfCars = await getStatiscticsTask;

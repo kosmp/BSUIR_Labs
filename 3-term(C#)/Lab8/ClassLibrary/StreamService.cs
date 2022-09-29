@@ -2,18 +2,17 @@
 using System.Collections;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
-//using Newtonsoft.Json;
-//using Newtonsoft.Json.Linq;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace ClassLibrary
 {
     public class StreamService<T>
     {
-        private IProgress<int> progressbar1 = new MyProgress<int>(percent => Console.Write($"\rWriting to stream: {(int)percent}%"));
-        private IProgress<int> progressbar2 = new MyProgress<int>(percent => Console.Write($"\rCopying to stream: {(int)percent}%"));
+        private IProgress<int> progressbar1 = new MyProgress<int>(percent => Console.Write($"\rThread: {Thread.CurrentThread.ManagedThreadId} Writing to stream: {(int)percent}%"));
+        private IProgress<int> progressbar2 = new MyProgress<int>(percent => Console.Write($"\rThread: {Thread.CurrentThread.ManagedThreadId} Copying to stream: {(int)percent}%"));
 
         public async Task WriteToStreamAsync(Stream stream, IEnumerable<T> data)
         {
@@ -24,11 +23,9 @@ namespace ClassLibrary
             foreach (var item in data)
             {
                 if (count != 0) await stream.WriteAsync(Encoding.ASCII.GetBytes(","));
-                //await Task.Delay(1);
                 count++;
                 progressbar1.Report(count * 100 / data.Count());
                 await JsonSerializer.SerializeAsync(stream, item);
-                //await stream.WriteAsync(Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(item)));
             }
             await stream.WriteAsync(Encoding.ASCII.GetBytes("]"));
 

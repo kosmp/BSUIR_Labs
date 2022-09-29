@@ -4,7 +4,7 @@ namespace ClassLibrary
 {
     public class TestClass
     {
-        static Semaphore sem = new Semaphore(2, 5);
+        static Semaphore sem = new Semaphore(2, 2);
         static Mutex mtx = new Mutex();
 
         public delegate void CulcHandler(double computedIntegral, string funcExecutionTime);

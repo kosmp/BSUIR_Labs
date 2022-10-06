@@ -1,0 +1,21 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                    org $8000
+  8000 86 EA        ldaa #%11101010
+  8002 46           rora
+  8003 59           rolb
+  8004 46           rora
+  8005 59           rolb
+  8006 46           rora
+  8007 59           rolb
+  8008 46           rora
+  8009 59           rolb
+  800A 46           rora
+  800B 59           rolb
+  800C 46           rora
+  800D 59           rolb
+  800E 46           rora
+  800F 59           rolb
+  8010 46           rora
+  8011 59           rolb
+  8012 C8 55        eorb #%01010101

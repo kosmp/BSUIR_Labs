@@ -1,0 +1,8 @@
+  ADDR B1 B2 B3 B4 D:\BSUIR\BSUIR_Labs\3-term(Assembler)\Lab2\Lab2. PAGE       1
+
+                    org $8000
+  8000 FD 03 01     std $301
+  8003 3D           mul
+  8004 FD 04 03     std $403
+  8007 FC 03 01     ldd $301
+

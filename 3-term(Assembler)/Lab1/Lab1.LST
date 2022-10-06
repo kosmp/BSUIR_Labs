@@ -1,0 +1,15 @@
+  ADDR B1 B2 B3 B4 D:\BSUIR\AssemblerLabs\Lab1\Lab1.asm             PAGE       1
+
+                    org $8000
+  8000 8F           xgdx
+  8001 18 8F        xgdy
+  8003 8F           xgdx
+  8004 FF 09 04     stx $904
+  8007 18 FF 08 53  sty $853
+  800B 18 FE 09 04  ldy $904
+  800F FE 08 53     ldx $853
+  8012 3C           pshx
+  8013 18 3C        pshy
+  8015 38           pulx
+  8016 18 38        puly
+

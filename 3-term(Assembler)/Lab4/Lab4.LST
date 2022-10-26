@@ -1,0 +1,70 @@
+  ADDR B1 B2 B3 B4 D:\BSUIR\BSUIR_Labs\3-term(Assembler)\Lab4\Lab4. PAGE       1
+
+                    org $8000
+
+  8000 C6 0A        ldab #10 ;
+  8002 CE 82 00     ldx #$8200 ;
+
+                   Initialization
+  8005 E7 00        stab 0,x
+  8007 08           inx
+  8008 5A           decb ;      ,  Z  = 0
+  8009 26 FA        bne Initialization
+
+  800B CE 82 00     ldx #$8200 ;
+  800E 86 0A        ldaa #10
+  8010 B7 84 00     staa $8400
+  8013 C6 09        ldab #9 ;  1 , .. -   1 ,  -
+  8015 F7 88 00     stab $8800
+
+                    ;  8800     .        1
+
+                   SortLoopExternal
+  8018 CE 82 00     ldx #$8200
+  801B B6 88 00     ldaa $8800 ;    8600    8800
+  801E B7 86 00     staa $8600 ;    8600    8800
+  8021 B6 84 00     ldaa $8400 ;   .    8400  ,     0, .. Z=1
+  8024 F6 86 00     ldab $8600 ;
+  8027 4A           deca
+  8028 B7 84 00     staa $8400
+  802B 26 02        bne SortLoopIn ;
+  802D 27 26        beq Done ;    8400(     a)  0, .. Z=1,
+
+                   SortLoopIn
+  802F F7 86 00     stab $8600 ; .. b
+  8032 A6 01        ldaa 1,x
+  8034 E6 00        ldab 0,x
+  8036 11           cba ;  a  b,  N=1
+  8037 2B 02        bmi Swap ;  a  b
+  8039 2A 04        bpl NotSwap ;  a    b
+
+                   Swap
+  803B A7 00        staa 0,x
+  803D E7 01        stab 1,x
+
+                   NotSwap
+  803F 08           inx
+  8040 F6 86 00     ldab $8600
+  8043 5A           decb
+  8044 F7 86 00     stab $8600
+  8047 26 E6        bne SortLoopIn ;  Z=0
+  8049 F6 88 00     ldab $8800
+  804C 5A           decb
+  804D F7 88 00     stab $8800
+  8050 F6 86 00     ldab $8600 ; ,     Z,
+  8053 27 C3        beq SortLoopExternal ;   ,       0, .. Z=1
+
+                   Done
+  8055 86 BD        ldaa #$bd
+  8057 C6 13        ldab #$13
+
+  Symbol Table 
+
+  SWAP               803B
+  DONE               8055
+  SORTLOOPIN         802F
+  INITIALIZATION     8005
+  SORTLOOPEXTERNAL   8018
+  Symbol Table     D:\BSUIR\BSUIR_Labs\3-term(Assembler)\Lab4\Lab4. PAGE       2
+
+  NOTSWAP            803F

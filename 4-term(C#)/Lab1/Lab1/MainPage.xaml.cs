@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Lab1;
 
@@ -12,6 +13,9 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        var ci = (CultureInfo)CultureInfo.InvariantCulture.Clone();
+        ci.NumberFormat.NumberDecimalSeparator = ".";
+        Thread.CurrentThread.CurrentCulture = ci;
     }
 
     private void processing(char _op)

@@ -1,6 +1,4 @@
-﻿using Java.IO;
-using Javax.Crypto;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace Lab1;
 
@@ -996,6 +994,18 @@ public partial class MainPage : ContentPage
                     }
                     label.Text = first + label.Text[i] + second;
                 }
+                else if (second.Length > 0 && second[0] == '-')
+                {
+                    if (second.Length == 2)
+                    {
+                        second = "0";
+                    }
+                    else
+                    {
+                        second = second.Substring(0, second.Length - 1);
+                    }
+                    label.Text = first + label.Text[i] + second;
+                }
                 return;
             }
         }
@@ -1003,7 +1013,7 @@ public partial class MainPage : ContentPage
         if (label.Text.Contains('E'))
             return;
 
-        if (label.Text.Length > 0 && label.Text[0] == '-')
+        if (label.Text.Length == 2 && label.Text[0] == '-')
         {
             memory = 0;
             first = "0";

@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace Lab1;
+namespace Calculator;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

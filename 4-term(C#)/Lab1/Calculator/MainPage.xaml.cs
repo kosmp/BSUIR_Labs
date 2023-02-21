@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace Lab1;
+namespace Calculator;
 
 public partial class MainPage : ContentPage
 {

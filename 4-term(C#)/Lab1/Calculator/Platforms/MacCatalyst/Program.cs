@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace Lab1;
+namespace Calculator;
 
 public class Program
 {

@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace Lab1;
+namespace Calculator;
 
 [Application]
 public class MainApplication : MauiApplication

@@ -1,4 +1,4 @@
-﻿namespace Lab1;
+﻿namespace Calculator;
 
 public partial class AppShell : Shell
 {

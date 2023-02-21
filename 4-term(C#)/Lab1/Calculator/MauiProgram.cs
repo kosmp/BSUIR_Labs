@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Lab1;
+namespace Calculator;
 
 public static class MauiProgram
 {

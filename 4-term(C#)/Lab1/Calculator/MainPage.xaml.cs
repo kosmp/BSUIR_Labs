@@ -18,8 +18,28 @@ public partial class MainPage : ContentPage
         Thread.CurrentThread.CurrentCulture = ci;
     }
 
+    private bool getRidOfInfinity()
+    {
+        if (label.Text.Contains("Infinity"))
+        {
+            label.Text = "0";
+            memory = 0;
+            first = "0";
+            second = "0";
+            op = '=';
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     private void processing(char _op)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Last() == '-' || label.Text.Last() == '+' || label.Text.Last() == '*' || label.Text.Last() == '÷')
         {
             if (_op == '=')
@@ -122,10 +142,15 @@ public partial class MainPage : ContentPage
         {
             func(_op);
         }
+
+        getRidOfInfinity();
     }
 
     private void func(char _op)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (_op == '=')
         {
             op = _op;
@@ -177,10 +202,15 @@ public partial class MainPage : ContentPage
             else
                 first = "0";
         }
+
+        getRidOfInfinity();
     }
 
     private void OnBtnZeroClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Length > 307)
             return;
 
@@ -209,6 +239,9 @@ public partial class MainPage : ContentPage
 
     private bool zeroInSecondHandler(char num)
     {
+        if (getRidOfInfinity())
+            return false;
+
         Regex regex = new Regex(@".?[0-9]?(\+|-|\*|÷)0$");
         MatchCollection matches = regex.Matches(label.Text);
 
@@ -225,6 +258,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnOneClicked(object sender, EventArgs e)
 	{
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Length > 306 || zeroInSecondHandler('1'))
             return;
 
@@ -241,6 +277,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnTwoClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Length > 306 || zeroInSecondHandler('2'))
             return;
 
@@ -257,6 +296,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnThreeClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Length > 306 || zeroInSecondHandler('3'))
             return;
 
@@ -274,6 +316,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnFourClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Length > 306 || zeroInSecondHandler('4'))
             return;
 
@@ -291,6 +336,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnFiveClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Length > 306 || zeroInSecondHandler('5'))
             return;
 
@@ -307,6 +355,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnSixClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Length > 306 || zeroInSecondHandler('6'))
             return;
 
@@ -323,6 +374,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnSevenClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Length > 306 || zeroInSecondHandler('7'))
             return;
 
@@ -339,6 +393,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnEightClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Length > 306 || zeroInSecondHandler('8'))
             return;
 
@@ -356,6 +413,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnNineClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Length > 306 || zeroInSecondHandler('9'))
             return;
 
@@ -382,6 +442,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnCommaClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         Regex regex = new Regex(@".+\.[0-9]*$");
         MatchCollection matches = regex.Matches(label.Text);
 
@@ -415,6 +478,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnPlusMinusClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text == "0")
             return;
 
@@ -530,6 +596,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnSquareRootClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         Regex regex = new Regex(@".*[0-9](\+|\*|÷|-)-?[0-9].*");
         MatchCollection matches = regex.Matches(label.Text);
 
@@ -639,6 +708,9 @@ public partial class MainPage : ContentPage
     
     private void OnBtnSquareClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         Regex regex = new Regex(@".*[0-9](\+|\*|÷|-)-?[0-9].*");
         MatchCollection matches = regex.Matches(label.Text);
 
@@ -730,6 +802,9 @@ public partial class MainPage : ContentPage
     
     private void OnBtnDivideByClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         Regex regex = new Regex(@".*[0-9](\+|\*|÷|-)-?[0-9].*");
         MatchCollection matches = regex.Matches(label.Text);
 
@@ -821,6 +896,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnPercentClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         Regex regex = new Regex(@".*[0-9](\+|\*|÷|-)-?[0-9].*");
         MatchCollection matches = regex.Matches(label.Text);
 
@@ -908,6 +986,9 @@ public partial class MainPage : ContentPage
     
     private void OnBtnCEClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         Regex regex = new Regex(@".*[0-9](\+|\*|÷|-)-?[0-9].*");
         MatchCollection matches = regex.Matches(label.Text);
 
@@ -962,6 +1043,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnDeleteClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         if (label.Text.Last() == '-' || label.Text.Last() == '+' || label.Text.Last() == '*' || label.Text.Last() == '÷')
         {
             return;
@@ -1031,6 +1115,9 @@ public partial class MainPage : ContentPage
 
     private void OnBtnRoundClicked(object sender, EventArgs e)
     {
+        if (getRidOfInfinity())
+            return;
+
         Regex regex = new Regex(@".*[0-9](\+|\*|÷|-)-?[0-9].*");
         MatchCollection matches = regex.Matches(label.Text);
 

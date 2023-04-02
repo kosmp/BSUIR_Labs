@@ -17,4 +17,9 @@
         </Tab>
     </FlyoutItem>
 
+    <FlyoutItem Title="DataBase">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:CocktailStorage}" />
+        </Tab>
+    </FlyoutItem>
 </Shell>

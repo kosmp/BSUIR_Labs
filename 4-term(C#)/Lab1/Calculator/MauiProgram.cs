@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Calculator.Entities;
+using Calculator.Services;
+using Microsoft.Extensions.Logging;
 
 namespace Calculator;
 
@@ -15,8 +17,11 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+		builder.Services.AddTransient<IDbService, SQLiteService>();
+        builder.Services.AddSingleton<CocktailStorage>();
+
 #if DEBUG
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 
 		return builder.Build();

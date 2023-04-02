@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.CocktailStorage"
+             xmlns:local="clr-namespace:MauiApp1"
+             xmlns:entity="clr-namespace:MauiApp1.Entities"
+             x:DataType="local:CocktailStorage"
+             Loaded="OnPage_Loaded"
+             Title="SQLiteDemo">
+    <VerticalStackLayout>
+        <Picker x:Name="picker"
+                Title="Choose cocktail"
+                ItemsSource="{Binding Cocktails}"
+                ItemDisplayBinding="{Binding Name}"
+                SelectedIndexChanged="PickerSelectedIndexChanged"
+                Margin="5"/>
+        <ListView ItemsSource="{Binding Ingredients}" 
+                  x:Name="IngredientListView"
+                  Margin="5">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="entity:Ingredient">
+                    <ViewCell>
+                        <Label Text="{Binding Name}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

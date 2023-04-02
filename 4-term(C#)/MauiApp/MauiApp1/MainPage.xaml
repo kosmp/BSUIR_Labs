@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage"
+             Title="Calculator">
+
+    <Grid BackgroundColor="#FFF5EE" Padding="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <BoxView
+            Grid.Row="0"
+            Grid.ColumnSpan="5"
+            Margin="5,20,5,30"
+            Color="white"
+            CornerRadius="20"
+            HorizontalOptions="Fill" />
+        <ScrollView VerticalScrollBarVisibility="Never"
+                    HorizontalScrollBarVisibility="Default"
+                    Orientation="Horizontal"
+                    Grid.ColumnSpan="5"
+                    HorizontalOptions="EndAndExpand"
+                    Margin="10,0,10,0">
+            <Label
+                x:Name="label"
+                Text="0"
+                FontSize="30"
+                Grid.Row="0"
+                Grid.ColumnSpan="5"
+                Margin="15,45,15,50"
+                HorizontalOptions="EndAndExpand" />
+        </ScrollView>
+        <Button
+            x:Name="RoundBtn"
+            Margin="1"
+            Padding="1"
+            Text="Round"
+            Grid.ColumnSpan="2"
+            FontSize="20"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="OnBtnRoundClicked"
+            Grid.Column="0" Grid.Row="1" />
+        <Button
+            x:Name="CEBtn"
+            Margin="1"
+            Text="CE"
+            FontSize="25"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="OnBtnCEClicked"
+            Grid.Column="2" Grid.Row="1" />
+        <Button
+            x:Name="CBtn"
+            Margin="1"
+            Text="C"
+            FontSize="25"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="CBtn_Clicked"
+            Grid.Column="3" Grid.Row="1" />
+        <Button
+            x:Name="DeleteBtn"
+            Margin="1"
+            Text="⌫"
+            FontAttributes="Bold"
+            FontSize="25"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="OnBtnDeleteClicked"
+            Grid.Column="4" Grid.Row="1" />
+        <Button
+            x:Name="DivideByBtn"
+            Margin="1"
+            Text="1/x"
+            Padding="1"
+            FontSize="25"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="OnBtnDivideByClicked"
+            Grid.Column="0" Grid.Row="2" />
+        <Button
+            x:Name="PercentBtn"
+            Margin="1"
+            Text="%"
+            Padding="1"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="OnBtnPercentClicked"
+            Grid.Column="1" Grid.Row="2" />
+        <Button
+            x:Name="SquareBtn"
+            Margin="1"
+            Text="х²"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="OnBtnSquareClicked"
+            Grid.Column="2" Grid.Row="2" />
+        <Button
+            x:Name="SquareRootBtn"
+            Margin="1"
+            Text="√x"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="OnBtnSquareRootClicked"
+            Grid.Column="3" Grid.Row="2" />
+        <Button
+            x:Name="DivideBtn"
+            Margin="1"
+            Text="÷"
+            FontSize="40"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="OnBtnDivideClicked"
+            Grid.Column="4" Grid.Row="2" />
+        <Button
+            x:Name="SevenBtn"
+            Margin="1"
+            Text="7"
+            Grid.ColumnSpan="2"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnSevenClicked"
+            Grid.Column="0" Grid.Row="3" />
+        <Button
+            x:Name="EightBtn"
+            Margin="1"
+            Text="8"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnEightClicked"
+            Grid.Column="2" Grid.Row="3" />
+        <Button
+            x:Name="NineBtn"
+            Margin="1"
+            Text="9"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnNineClicked"
+            Grid.Column="3" Grid.Row="3" />
+        <Button
+            x:Name="MultiplyBtn"
+            Margin="1"
+            Text="x"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="OnBtnMultiplyClicked"
+            Grid.Column="4" Grid.Row="3" />
+        <Button
+            x:Name="FourBtn"
+            Margin="1"
+            Text="4"
+            Grid.ColumnSpan="2"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnFourClicked"
+            Grid.Column="0" Grid.Row="4" />
+        <Button
+            x:Name="FiveBtn"
+            Margin="1"
+            Text="5"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnFiveClicked"
+            Grid.Column="2" Grid.Row="4" />
+        <Button
+            x:Name="SixBtn"
+            Margin="1"
+            Text="6"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnSixClicked"
+            Grid.Column="3" Grid.Row="4" />
+        <Button
+            x:Name="MinusBtn"
+            Margin="1"
+            Text="-"
+            FontSize="40"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="OnBtnMinusClicked"
+            Grid.Column="4" Grid.Row="4" />
+        <Button
+            x:Name="OneBtn"
+            Margin="1"
+            Text="1"
+            Grid.ColumnSpan="2"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnOneClicked"
+            Grid.Column="0" Grid.Row="5" />
+        <Button
+            x:Name="TwoBtn"
+            Margin="1"
+            Text="2"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnTwoClicked"
+            Grid.Column="2" Grid.Row="5" />
+        <Button
+            x:Name="ThreeBtn"
+            Margin="1"
+            Text="3"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnThreeClicked"
+            Grid.Column="3" Grid.Row="5" />
+        <Button
+            x:Name="PlusBtn"
+            Margin="1"
+            Text="+"
+            FontSize="40"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#F0FFFF"
+            TextColor="Black"
+            Clicked="OnBtnPlusClicked"
+            Grid.Column="4" Grid.Row="5" />
+        <Button
+            x:Name="PlusMinusBtn"
+            Margin="1"
+            Text="+/-"
+            Grid.ColumnSpan="2"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnPlusMinusClicked"
+            Grid.Column="0" Grid.Row="6" />
+        <Button
+            x:Name="ZeroBtn"
+            Margin="1"
+            Text="0"
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnZeroClicked"
+            Grid.Column="2" Grid.Row="6" />
+        <Button
+            x:Name="CommaBtn"
+            Margin="1"
+            Text=","
+            FontSize="30"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#FFFFFF"
+            TextColor="Black"
+            Clicked="OnBtnCommaClicked"
+            Grid.Column="3" Grid.Row="6" />
+        <Button
+            x:Name="EqualBtn"
+            Margin="1"
+            Text="="
+            FontAttributes="Bold"
+            FontSize="40"
+            CornerRadius="40"
+            BorderWidth="1"
+            BorderColor="#FFE4E1"
+            BackgroundColor="#AFEEEE"
+            TextColor="Black"
+            Clicked="OnBtnEqualClicked"
+            Grid.Column="4" Grid.Row="6" />
+    </Grid>
+
+</ContentPage>

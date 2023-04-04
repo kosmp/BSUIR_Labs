@@ -20,11 +20,6 @@ public partial class CocktailStorage : ContentPage
         BindingContext = this;
     }
 
-    public CocktailStorage()
-    {
-        InitializeComponent();
-    }
-
     private void PickerSelectedIndexChanged(object sender, EventArgs e)
     {
         Ingredients = new ObservableCollection<Ingredient>(db.GetCocktailIngredients((picker.SelectedItem as Cocktail).Id));
@@ -34,7 +29,6 @@ public partial class CocktailStorage : ContentPage
     private void OnPage_Loaded(object sender, EventArgs e)
     {
         Cocktails = new ObservableCollection<Cocktail>(db.GetAllCocktails());
-        picker.ItemsSource = null;
         picker.ItemsSource = Cocktails;
     }
 }

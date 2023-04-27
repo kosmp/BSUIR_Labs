@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Converter"
+             Title="Converter" Loaded="OnLoadedPage">
+    <VerticalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label Text="Transfer BY to selected currency: " VerticalOptions="Center"/>
+            <Picker x:Name = "TransferPicker" Title="Select" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Entry x:Name="EnterTransferEntry" Placeholder="BY               "/>
+            <Label x:Name="TransferOutLabel" VerticalOptions="Center" HorizontalOptions="End"/>
+        </HorizontalStackLayout>
+        <Button Text="BY to currency" Clicked="OnTransferButtonClicked"/>
+
+        <HorizontalStackLayout>
+            <Label Text="Transfer selected currency to BY: " VerticalOptions="Center"/>
+            <Picker x:Name = "ReverseTransferPicker" Title="Select" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Entry x:Name="EnterReverseTransferEntry" Placeholder="Currency   "/>
+            <Label x:Name="ReverseTransferOutLabel" VerticalOptions="Center"/>
+        </HorizontalStackLayout>
+        <Button Text="Currency to BY" Clicked="OnReverseTransferButtonClicked"/>
+
+        <DatePicker MinimumDate="03/29/1995" DateSelected="OnDateSelected" x:Name="Calendar"/>
+    </VerticalStackLayout>
+</ContentPage>

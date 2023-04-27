@@ -22,4 +22,10 @@
             <ShellContent ContentTemplate="{DataTemplate local:CocktailStorage}" />
         </Tab>
     </FlyoutItem>
+
+    <FlyoutItem Title="CurrencyConverter">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:Converter}" />
+        </Tab>
+    </FlyoutItem>
 </Shell>

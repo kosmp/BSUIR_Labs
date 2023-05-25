@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_153505_Kosmin.Pages.AddCocktailPage"
+             Title="AddCocktailPage">
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Cocktail Name" FontSize="50"/>
+            <Entry x:Name="CocktailName" FontSize="50" TextColor="RoyalBlue"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Cocktail Price" FontSize="50"/>
+            <Entry x:Name="CocktailPrice" FontSize="50" TextColor="RoyalBlue"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Cocktail Strength" FontSize="50"/>
+            <Entry x:Name="CocktailStrength" FontSize="50" TextColor="RoyalBlue"/>
+        </HorizontalStackLayout>
+        <Button Text="Add Cocktail" Clicked="AddCocktailEvent"/>
+    </VerticalStackLayout>
+</ContentPage>

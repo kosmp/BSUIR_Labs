@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:_153505_Kosmin.ViewModels"
+             x:DataType="models:IngredientDetailsViewModel"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="_153505_Kosmin.Pages.IngredientDetails"
+             BindingContext="IngredientDetailsViewModel">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="IngrImg" Aspect="Center"/>
+            <Label x:Name="NameLabel" FontSize="50"></Label>
+            <Label x:Name="RemainNum" FontSize="50"></Label>
+            <Button Text="Edit" Clicked="EditEvent"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

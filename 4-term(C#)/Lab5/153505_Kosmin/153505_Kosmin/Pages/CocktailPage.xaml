@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:_153505_Kosmin.ViewModels"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:ent="clr-namespace:_153505_Kosmin.Domain.Entitites;assembly=153505_Kosmin.Domain"
+             xmlns:conv="clr-namespace:_153505_Kosmin.ValueConverter"
+             x:DataType="models:CocktailPageViewModel"
+             x:Class="_153505_Kosmin.Pages.CocktailPage"
+             BindingContext="CocktailPageViewModel"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:RateToColorValueConverter x:Key="RateToColor"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded"
+                                        Command="{Binding UpdateCocktailListCommand }">
+
+        </toolkit:EventToCommandBehavior>
+
+    </ContentPage.Behaviors>
+
+    
+
+    <ContentPage.Content>
+                <StackLayout>
+                <Picker x:Name="CocktailPicker"
+                                ItemsSource="{Binding Cocktails}"
+                                SelectedItem="{Binding SelectedCocktail}"
+                                ItemDisplayBinding="{Binding Name}"
+                                
+                                >
+
+                    <Picker.Behaviors>
+                        <toolkit:EventToCommandBehavior EventName="SelectedIndexChanged"
+                                            Command="{Binding UpdateIngredientListCommand }">
+
+                        </toolkit:EventToCommandBehavior>
+                    </Picker.Behaviors>
+
+                </Picker>
+            <HorizontalStackLayout>
+                <Label Text="Price - "
+                       ></Label>
+                <Label 
+                       Text="{Binding SelectedCocktail.Price}"
+                       ></Label>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Strength - "
+                       ></Label>
+                <Label Text="{Binding SelectedCocktail.Strength}"
+                       ></Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Button Text="Add cocktail" x:Name="AddCocktail" Command="{Binding CocktCommand}"/>
+                <Button Text="Add ingredient" x:Name="AddIngredient" Command="{Binding IngrCommand}"/>
+            </HorizontalStackLayout>
+
+                <CollectionView x:Name="ingrView"
+                                    ItemsSource="{Binding Ingredients}"
+                                    HeightRequest="600">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="ent:Ingredient">
+                        <Frame BackgroundColor="{Binding RemainNum, Converter={StaticResource RateToColor}}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type models:CocktailPageViewModel}}, Path=ShowDetailsCommand}" CommandParameter="{Binding}"/>
+
+
+                            </Frame.GestureRecognizers>
+                            <HorizontalStackLayout>
+                                <toolkit:AvatarView ImageSource="{Binding PicPath}" />
+                                <Label FontSize = "20"  Margin = "10" Text="{Binding Name}"/>
+                            </HorizontalStackLayout>
+                            
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                </CollectionView>
+        </StackLayout>
+       </ContentPage.Content>
+</ContentPage>

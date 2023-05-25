@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="_153505_Kosmin.Pages.EditIngredient"
+             xmlns:models="clr-namespace:_153505_Kosmin.ViewModels"
+             BindingContext="CocktailPageViewModel"
+             x:DataType="models:CocktailPageViewModel"
+             Title="EditIngredient">
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Button Text="Choose Image" FontSize="25" Clicked="ChangeImage"/>
+            <Image x:Name ="img" Aspect="Center"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Ingredient Name: " FontSize="50"/>
+            <Entry x:Name ="name" FontSize="50" TextColor="Crimson"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Ingredient RemainNum: " FontSize="50"/>
+            <Entry x:Name ="num" FontSize="50" TextColor="Crimson"/>
+        </HorizontalStackLayout>
+        <Picker x:Name="pick"/>
+        <Button Text="Apply" Clicked="ApplyChanges"/>
+    </VerticalStackLayout>
+</ContentPage>

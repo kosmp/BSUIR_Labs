@@ -7,7 +7,6 @@
              xmlns:conv="clr-namespace:_153505_Kosmin.ValueConverter"
              x:DataType="models:CocktailPageViewModel"
              x:Class="_153505_Kosmin.Pages.CocktailPage"
-             BindingContext="CocktailPageViewModel"
              >
 
     <ContentPage.Resources>

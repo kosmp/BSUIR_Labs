@@ -1,9 +1,8 @@
-import random
+import random, builtins
 
 
-def task_1():
-    random_number = random.randint(5, 50)
-    print('Hello, world!\nAndhiagain!\n' + '!' * random_number)
+def task_1(random_num):
+    return 'Hello, world!\nAndhiagain!\n' + '!' * random_num
 
 
 def task_2():
@@ -47,6 +46,13 @@ def task_2():
 
     print(f'min age: {min_age}, max age: {max_age}, av age: {av_age:.2f}')
 
+    return {
+        'list_of_people': list_of_people,
+        'min_age': min_age,
+        'max_age': max_age,
+        'av_age': av_age
+    }
+
 
 def task_3():
     while True:
@@ -63,7 +69,7 @@ def task_3():
 
             area = length * width
             print(f"Площадь прямоугольника: {area}")
-            break
+            return area
 
         except ValueError:
             print("Ошибка: Введите числовые значения для длины и ширины.")
@@ -102,10 +108,15 @@ def task_4():
         html_file.write("</body>\n")
         html_file.write("</html>\n")
 
-    print("HTML-файл с градиентной таблицей и прозрачными границами создан.")
+    # Теперь читаем сгенерированный HTML-код из файла и возвращаем его
+    with builtins.open("gradient_table.html", "r") as html_file:
+        html_code = html_file.read()
+
+    return html_code
 
 
-task_1()
-task_2()
-task_3()
-task_4()
+# random_number = random.randint(5, 50)
+# print(task_1(random_number))
+# task_2()
+# task_3()
+# task_4()
